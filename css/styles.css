@@ -1,0 +1,55 @@
+:root {
+    --main-bg-color: #1d1e1f;
+    --white-bg-color: #f4f4f4;
+    --card-color: #242526;
+    --heading-white: #ffffff;
+    --subheading-white: #b9b9b9;
+    --accent-blue: #4ba1af;
+    --accent-green: #0D5041;
+    --ecotech-gradient: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 100%);
+    --ecotech-gradient-main-green: linear-gradient(45deg, rgba(13,80,65,1) 48%, rgba(26,169,213,1) 100%);
+    --ecotech-gradient-main-blue: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 46%);
+    --box-shadow: 2px 4px 9px -2px #000000;
+
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+body {
+    background-color: var(--main-bg-color);
+}
+
+h1 {
+    color: var(--heading-white);
+}
+
+h2 {
+    color: var(--subheading-white);
+}
+
+h3 {
+    color: var(--accent-blue);
+}
+
+p {
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: var(--subheading-white);
+}
+
+.button {
+    border: 2px solid var(--accent-green);
+    padding: 20px;
+    border-radius: 50px;  
+}
+
+.button:hover {
+   border: 2px solid var(--accent-blue);
+   transition: ease-in-out 1s;  
+}
