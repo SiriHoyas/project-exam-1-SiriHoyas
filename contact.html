@@ -5,6 +5,79 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <nav>
+      <div class="navbar">
+        <div class="menu-left">
+          <svg
+            class="menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="333.303"
+            height="333.303"
+            viewBox="0 0 333.303 333.303"
+          >
+            <defs>
+              <linearGradient
+                id="linear-gradient"
+                x1="1.385"
+                y1="0.178"
+                x2="-0.876"
+                y2="1.281"
+                gradientUnits="objectBoundingBox"
+              >
+                <stop offset="0" stop-color="#0d5041" />
+                <stop offset="1" stop-color="#1aa9d5" />
+              </linearGradient>
+            </defs>
+            <path
+              id="menu_1_"
+              data-name="menu (1)"
+              d="M225.24,179.659H108.063a13.02,13.02,0,1,1,0-26.039H225.24a13.02,13.02,0,0,1,0,26.039Zm13.02-65.086a13.019,13.019,0,0,0-13.02-13.02H108.063a13.02,13.02,0,0,0,0,26.039H225.24A13.019,13.019,0,0,0,238.26,114.573Zm0,104.157a13.019,13.019,0,0,0-13.02-13.02H108.063a13.02,13.02,0,1,0,0,26.039H225.24A13.019,13.019,0,0,0,238.26,218.73Zm14.622,90.555a13.019,13.019,0,1,0-13.49-22.271,140.368,140.368,0,0,1-72.74,20.249c-77.533,0-140.612-63.079-140.612-140.612S89.119,26.039,166.652,26.039,307.264,89.119,307.264,166.652a140.04,140.04,0,0,1-23.842,78.042,13.019,13.019,0,1,0,21.645,14.474A166.565,166.565,0,0,0,48.811,48.811,166.667,166.667,0,0,0,252.882,309.286Zm0,0"
+              fill="url(#linear-gradient)"
+            />
+          </svg>
+        </div>
+        <div class="menu-middle">
+          <img class="mobile-logo" src="/resources/img/mobile-logo.png" />
+        </div>
+
+        <div class="menu-right"></div>
+      </div>
+      <div class="navbar-open">
+        <ul>
+          <li class="menu-item"><a href="/posts.html">Blog</a></li>
+          <li class="menu-item"><a href="/contact.html">Contact</a></li>
+          <li class="menu-item"><a href="/about.html">About</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="contact-form-container">
+      <h1>Contact</h1>
+      <p>
+        Do you hav ean idea for an article, orjust wnat to give us feedback?
+        Drop us a line below
+      </p>
+
+      <form>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="name" />
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" id="subject" />
+        <label for="message">Message</label>
+        <input type="text" name="message" id="message" />
+      </form>
+    </div>
+  </body>
+  <script src="/js/menu-toggle.js"></script>
 </html>

@@ -13,7 +13,7 @@ async function createHTML() {
     if (i === 3) {
       break;
     }
-    newestPostsContainer.innerHTML += `<div class="post-card-mobile">
+    newestPostsContainer.innerHTML += `<div class="post-card">
       <img src="${result[i].featured_media_src_url}" alt="${result[i].acf.imgAlt}" class="thumbnail-img">
       <div class="post-content-wrapper">
       <span class="category">CATEGORY</span>
