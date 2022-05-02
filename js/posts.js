@@ -12,9 +12,11 @@ async function createPostsHtml() {
     const postsContainer = document.querySelector(".posts-container");
     postsContainer.innerHTML += `<a href="post-specific.html?id=${result[i].id}" class="posts-card">
   <img src="${result[i].featured_media_src_url}" alt="${result[i].acf.imgAlt}" class="posts-img">
-  <span class="posts-category">CATEGORT</span>
+  <div class="posts-content-wrapper">
+  <span class="posts-category">CATEGORY</span>
   <h2>${result[i].title.rendered}</h2>
   <p>${result[i].acf.subheading}</p>
+  </div>
   </a>`;
   }
 }

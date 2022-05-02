@@ -13,7 +13,14 @@ async function getSinglePost() {
     ".post-spesific-container"
   );
 
-  postSpecificContainer.innerHTML = `<h1>${result.title.rendered}</h1>`;
+  postSpecificContainer.innerHTML = `
+  <div class="post-specific-container">
+  <span>CATEGORIES</span>
+  <h1>${result.title.rendered}</h1>
+  <p>${result.acf.subheading}</p>
+  <img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="post-featured-img">
+  <article>${result.acf.paragraph}</article>
+  </div>`;
 }
 
 getSinglePost();
