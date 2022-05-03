@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/media-queries.css" />
   </head>
   <body>
     <nav>
@@ -62,7 +63,13 @@
     </nav>
     <section class="index-main-content">
       <h1>Latest posts</h1>
-      <div class="newest-posts-container"></div>
+      <div class="newest-posts-container">
+        <button class="prev">Prev</button>
+        <div class="slide1 active"></div>
+        <div class="slide2"></div>
+        <div class="slide3"></div>
+        <button class="next">Next</button>
+      </div>
       <h2 class="heading-newest-reviews">Latest reviews</h2>
       <div class="new-reviews-container"></div>
     </section>
@@ -70,5 +77,6 @@
     <script type="module" src="js/latestPosts.js"></script>
     <script type="module" src="/js/categoryPosts.js"></script>
     <script src="/js/menu-toggle.js"></script>
+    <script src="/js/carousel.js"></script>
   </body>
 </html>
