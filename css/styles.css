@@ -254,24 +254,27 @@ margin-bottom: 5px;
     color: var(--accent-blue);
 }
 
-/* Post Spesific */
-.post-spesific-container {
+/* Post Spesific */ /* About us */
+.post-spesific-container, .about-us-post-container {
     background-color: var(--white-bg-color);
     width: 90vw;
     margin: 0 auto;
     padding: 20px;
 }
 
-.post-spesific-container h1 {
+.post-spesific-container h1, .about-us-post-container h1 {
     color: #000000;
     text-align: left;
 }
 
-.post-spesific-container p {
+.post-spesific-container p, .about-us-post-container p {
     color: #000000;
 }
 
-.post-featured-img {
+.post-featured-img, .about-us-post-container img {
     width: 100%;
 }
 
+.expand {
+    size: 200%;
+}

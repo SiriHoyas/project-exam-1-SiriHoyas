@@ -135,7 +135,7 @@
 
 /* Post Spesific */
 
-.post-spesific-container {
+.post-spesific-container, .about-us-post-container {
     width: 60vw;   
 }
     
