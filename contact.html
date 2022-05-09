@@ -64,21 +64,38 @@
     <div class="contact-form-container">
       <h1>Contact</h1>
       <p>
-        Do you hav ean idea for an article, orjust wnat to give us feedback?
+        Do you have an idea for an article, or just wnat to give us feedback?
         Drop us a line below
       </p>
 
       <form>
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" />
+        <input type="text" name="name" id="name" placeholder="Your full name" />
         <label for="email">Email</label>
-        <input type="email" name="email" id="name" />
+        <input
+          type="email"
+          name="email"
+          id="name"
+          placeholder="example@example.com"
+        />
         <label for="subject">Subject</label>
-        <input type="text" name="subject" id="subject" />
+        <input
+          type="text"
+          name="subject"
+          id="subject"
+          placeholder="What can we help you with?"
+        />
         <label for="message">Message</label>
-        <input type="text" name="message" id="message" />
+        <input
+          type="text"
+          name="message"
+          id="message"
+          placeholder="Write your message here"
+        />
+        <a href="#" class="button submit-btn">SEND</a>
       </form>
     </div>
   </body>
   <script src="/js/menuToggle.js"></script>
+  <script src="/js/formValidation.js"></script>
 </html>

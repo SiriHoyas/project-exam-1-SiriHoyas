@@ -71,9 +71,11 @@ ul li a {
 }
 
 .button {
-    border: 2px solid var(--accent-green);
-    padding: 20px;
+    border: 1.9px solid var(--accent-green);
+    padding: 8px;
     border-radius: 50px;  
+    text-align: center;
+    font-size: .7rem;
 }
 
 .button:hover {
@@ -209,24 +211,57 @@ margin-bottom: 5px;
     margin-top: 50px;
 }
 
+.contact-form-container h1 {
+    font-family: "Beon", sans-serif;
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+}
+
+.contact-form-container p {
+    text-align: center;
+    font-size: .6rem;
+    margin-bottom: 20px;
+    
+}
+
 .contact-form-container form {
     display: flex;
     flex-direction: column;
-    width: 85%;
+    align-items: center;
+    width: 70%;
 }
 
 .contact-form-container label {
     color: var(--subheading-white);
-    margin-bottom: 5px;
+    margin-bottom: 7px;
     margin-top: 10px;
-    font-size: .9rem;
+    font-size: .75rem;
+    align-self: flex-start;
 }
 
 .contact-form-container input {
     background-color: var(--card-color);
     border: .5px solid #707070;
     height: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: .55rem;
+    padding: 8px;
     
+}
+
+.error {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 10px;
+    /* display: none; */
+    justify-items: flex-start;
+  }
+  
+
+.submit-btn {
+margin-top: 20px;
+width: 60%;
 }
 
 /*Posts.html*/

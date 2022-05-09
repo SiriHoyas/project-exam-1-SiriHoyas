@@ -49,3 +49,5 @@ function checkState() {
 
 nextBtn.addEventListener("click", next);
 prevBtn.addEventListener("click", prev);
+
+//Mer dynamisk
