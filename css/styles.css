@@ -199,6 +199,13 @@ margin-bottom: 5px;
 }
 
 /* Contact.html */
+
+.submit-message p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    /* display: none; */
+}
 .contact-form-container {
     background-color: var(--card-color);
     display: flex;
@@ -254,8 +261,9 @@ margin-bottom: 5px;
     color: red;
     margin-bottom: 10px;
     font-size: 10px;
-    /* display: none; */
+    display: none;
     justify-items: flex-start;
+    text-align: start;
   }
   
 

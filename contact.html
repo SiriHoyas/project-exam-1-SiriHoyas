@@ -62,22 +62,28 @@
       </div>
     </nav>
     <div class="contact-form-container">
-      <h1>Contact</h1>
-      <p>
+      <h1 class="contact-form-heading">Contact</h1>
+      <p class="contact-form-description">
         Do you have an idea for an article, or just wnat to give us feedback?
         Drop us a line below
       </p>
 
-      <form>
+      <form class="contact-form">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" placeholder="Your full name" />
+        <h2 class="error" id="name-error">
+          Please enter a name longer than 5 characters
+        </h2>
+
         <label for="email">Email</label>
         <input
           type="email"
           name="email"
-          id="name"
+          id="email"
           placeholder="example@example.com"
         />
+        <h2 class="error" id="email-error">Please enter a valid email</h2>
+
         <label for="subject">Subject</label>
         <input
           type="text"
@@ -85,6 +91,10 @@
           id="subject"
           placeholder="What can we help you with?"
         />
+        <h2 class="error" id="subject-error">
+          Please enter a subject longer than 15 characters
+        </h2>
+
         <label for="message">Message</label>
         <input
           type="text"
@@ -92,7 +102,10 @@
           id="message"
           placeholder="Write your message here"
         />
-        <a href="#" class="button submit-btn">SEND</a>
+        <h2 class="error" id="message-error">
+          Please enter a message longer than 25 characters
+        </h2>
+        <input type="submit" class="button" />
       </form>
     </div>
   </body>
