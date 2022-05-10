@@ -7,7 +7,7 @@ const getPostByCategory =
 async function createHTML() {
   const result = await getContent(getPostByCategory);
   console.log(result);
-  const newestPostsContainer = document.querySelector(".new-reviews-container");
+  const newestPostsContainer = document.querySelector(".new-reviews-content");
   for (let i = 0; i < result.length; i++) {
     console.log(result[i]);
     if (i === 3) {

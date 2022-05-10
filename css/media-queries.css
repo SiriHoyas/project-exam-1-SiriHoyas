@@ -4,6 +4,8 @@
     .navbar {
         height: 80px; 
         box-shadow: none;  
+        position: static;
+        
     }
     .menu-icon {
        display: none;  
@@ -28,6 +30,9 @@
         background-color: var(--main-bg-color);
         margin: 0;
         box-shadow: var(--box-shadow);
+        position: relative;
+        z-index: -1;
+      
     }
     
     .menu-item {
@@ -43,26 +48,28 @@
 
     /* Index.html */
 
-    .new-reviews-container {
-    margin-top: 5px;
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 10px;
-    background-color: var(--card-color);
-    padding: 50px;
-    width: 90vw;
-    margin: 0 auto;
-}
-
 .newest-posts-container {
     background-color: var(--card-color);
     padding: 50px;
+    padding-top: 10px;
+    padding-bottom: 20px;
     width: 90vw;
     margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.index-main-content h1 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    letter-spacing: .5px;
+}
+
+.newest-post-content {
+    display: flex;
+    align-items: center;
+    
 }
 
     .post-card {
@@ -87,22 +94,82 @@
    display: flex;
     gap: 10px;
     margin: 0 auto;
+    animation-name: FadeIn;
+    animation-duration: 500ms;
+    transition-timing-function: linear;
+    margin-left: 10px;
+    margin-right: 10px;
+    
 }
+
+@keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 .slide1{
     display: none;
+    
 }
 
 .slide2 {
     display: none;
+    
 }
 
 .slide3 {
     display: none;
+    
 }
 
 .active {
     display: flex;
+}
+
+.new-reviews-container {
+    background-color: var(--card-color);
+    padding: 50px;
+    padding-top: 10px;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 30px;
+    }
+
+    .new-reviews-container h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        letter-spacing: .5px;
+    }
+
+    .new-reviews-content {
+    margin-top: 5px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+}
+
+.slide-indicator-container {
+    display: flex;
+    justify-content: space-between;
+    width: 3vw;
+}
+
+.slide-indicator {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #5A5A5A;
+    
+}
+
+.indicator-1 {
+    background-color: var(--accent-blue);
 }
 
 /* Contact.html */

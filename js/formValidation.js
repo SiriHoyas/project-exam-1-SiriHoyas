@@ -45,7 +45,6 @@ function validateForm() {
   }
 
   if (namePassed && subjectPassed && emailPassed && messagePassed) {
-    document.querySelector(".submit-message").innerHTML = `<h2>Thanks!</h2>`;
     contactForm.style.display = "none";
     document.querySelector(".contact-form-heading").innerHTML = `Thank you!`;
     document.querySelector(

@@ -9,7 +9,7 @@
     --ecotech-gradient: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 100%);
     --ecotech-gradient-main-green: linear-gradient(45deg, rgba(13,80,65,1) 48%, rgba(26,169,213,1) 100%);
     --ecotech-gradient-main-blue: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 46%);
-    --box-shadow: 2px 4px 9px -2px #000000;
+    --box-shadow: 10px 0px 21px 4px rgba(0,0,0,0.57);
 
 }
 * {
@@ -85,7 +85,7 @@ ul li a {
 
 .category {
     color: var(--accent-blue);
-    font-size: .5rem;
+    font-size: .7rem;
 }
 
 /*vNavbar mobile */
@@ -95,13 +95,16 @@ nav {
 
 .navbar {
     height: 60px;
+    width: 100vw;
     background-color: var(--card-color);
     box-shadow: var(--box-shadow);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 1;
+    
 }
 
 .menu-left {
@@ -130,15 +133,26 @@ nav {
 }
 .navbar-open {
 display: none;
-
 }
 
 .toggle {
 display: revert;
 background-color: var(--card-color);
-position: absolute;
 width: 100vw; 
+animation-name: FadeIn;
+animation-duration: .2s;
+transition-timing-function: linear;
+position: fixed;
 }
+
+@keyframes FadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
 .menu-item {
     padding: 20px;
@@ -151,7 +165,7 @@ width: 100vw;
     font-weight: 100;
     font-size: .9rem;
     margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
 .newest-posts-container, .new-reviews-container {
@@ -160,8 +174,16 @@ width: 100vw;
     flex-direction: column;
     align-items: center;
 }
+
+.newest-posts-container {
+    margin-top: 60px;
+}
 .prev, .next, .slide2, .slide3 {
     display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
 }
 
 .post-card{
@@ -195,7 +217,7 @@ margin-bottom: 5px;
 
 .heading-newest-reviews {
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 10;
 }
 
 /* Contact.html */
