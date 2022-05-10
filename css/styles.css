@@ -297,6 +297,11 @@ width: 60%;
 
 /*Posts.html*/
 
+.blog-main-content {
+    display: flex;
+    flex-direction: column;
+}
+
 .posts-container {
     display: flex;
     flex-direction: column;
@@ -318,6 +323,17 @@ width: 60%;
 
 .posts-content-wrapper span {
     color: var(--accent-blue);
+}
+
+.show-more-btn {
+    background-color: var(--main-bg-color);
+    color: var(--heading-white);
+    width: 150px;
+    align-self: center;
+    padding: 15px;
+    font-size: .8rem;
+    margin-bottom: 100px;
+    margin-top: 30px;
 }
 
 /* Post Spesific */ /* About us */

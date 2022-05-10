@@ -7,11 +7,8 @@ async function createPostsHtml() {
   const result = await getContent(getAllPosts);
   const postsContainer = document.querySelector(".posts-container");
   for (let i = 0; i < result.length; i++) {
-    // createHtml(postsContainer, result[i]);
+    createHtml(postsContainer, result[i]);
   }
-
-  const filterByCategory = result.filter((post) => post.categories[0] === 5);
-  console.log(filterByCategory);
 }
 
 createPostsHtml();
