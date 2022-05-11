@@ -36,6 +36,11 @@ async function getContentAndRenderSinglePost() {
       .querySelector(".blog-post-spesific-body")
       .classList.add("disable-scroll");
   }
+
+  const backBtn = document.querySelector(".back-btn");
+  backBtn.addEventListener("click", function () {
+    console.log(history.back());
+  });
 }
 
 getContentAndRenderSinglePost();
@@ -43,7 +48,7 @@ getContentAndRenderSinglePost();
 function createHTMLForSinglePost(container, result) {
   container.innerHTML = `
   <div class="post-specific-content">
-  <span>${convertCategories(result.categories[0])}</span>
+  <span class="category">${convertCategories(result.categories[0])}</span>
   <h1>${result.title.rendered}</h1>
   <p>${result.acf.subheading}</p>
   <img src="${result.featured_media_src_url}" alt="${

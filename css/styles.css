@@ -336,6 +336,10 @@ width: 60%;
 }
 
 /* Post Spesific */ /* About us */
+
+.blog-spesific-main-content {
+    margin-top: 70px;
+}
 .post-spesific-container, .about-us-post-container {
     background-color: var(--white-bg-color);
     width: 90vw;
