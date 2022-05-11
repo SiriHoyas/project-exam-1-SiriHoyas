@@ -10,7 +10,6 @@ const indicator2 = document.querySelector(".indicator-2");
 const indicator3 = document.querySelector(".indicator-3");
 
 let counter = 1;
-console.log(counter);
 
 function next() {
   if (counter === 3) {
@@ -18,7 +17,6 @@ function next() {
   } else {
     counter++;
   }
-  console.log(counter);
   checkState();
 }
 
@@ -28,8 +26,6 @@ function prev() {
   } else {
     counter--;
   }
-  console.log(counter);
-
   checkState();
 }
 
@@ -62,5 +58,3 @@ function checkState() {
 
 nextBtn.addEventListener("click", next);
 prevBtn.addEventListener("click", prev);
-
-//Mer dynamisk
