@@ -7,10 +7,7 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/media-queries.css" />
   </head>
@@ -18,39 +15,18 @@
     <nav>
       <div class="navbar">
         <div class="menu-left">
-          <svg
-            class="menu-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            width="333.303"
-            height="333.303"
-            viewBox="0 0 333.303 333.303"
-          >
+          <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="333.303" height="333.303" viewBox="0 0 333.303 333.303">
             <defs>
-              <linearGradient
-                id="linear-gradient"
-                x1="1.385"
-                y1="0.178"
-                x2="-0.876"
-                y2="1.281"
-                gradientUnits="objectBoundingBox"
-              >
+              <linearGradient id="linear-gradient" x1="1.385" y1="0.178" x2="-0.876" y2="1.281" gradientUnits="objectBoundingBox">
                 <stop offset="0" stop-color="#0d5041" />
                 <stop offset="1" stop-color="#1aa9d5" />
               </linearGradient>
             </defs>
-            <path
-              id="menu_1_"
-              data-name="menu (1)"
-              d="M225.24,179.659H108.063a13.02,13.02,0,1,1,0-26.039H225.24a13.02,13.02,0,0,1,0,26.039Zm13.02-65.086a13.019,13.019,0,0,0-13.02-13.02H108.063a13.02,13.02,0,0,0,0,26.039H225.24A13.019,13.019,0,0,0,238.26,114.573Zm0,104.157a13.019,13.019,0,0,0-13.02-13.02H108.063a13.02,13.02,0,1,0,0,26.039H225.24A13.019,13.019,0,0,0,238.26,218.73Zm14.622,90.555a13.019,13.019,0,1,0-13.49-22.271,140.368,140.368,0,0,1-72.74,20.249c-77.533,0-140.612-63.079-140.612-140.612S89.119,26.039,166.652,26.039,307.264,89.119,307.264,166.652a140.04,140.04,0,0,1-23.842,78.042,13.019,13.019,0,1,0,21.645,14.474A166.565,166.565,0,0,0,48.811,48.811,166.667,166.667,0,0,0,252.882,309.286Zm0,0"
-              fill="url(#linear-gradient)"
-            />
+            <path id="menu_1_" data-name="menu (1)" d="M225.24,179.659H108.063a13.02,13.02,0,1,1,0-26.039H225.24a13.02,13.02,0,0,1,0,26.039Zm13.02-65.086a13.019,13.019,0,0,0-13.02-13.02H108.063a13.02,13.02,0,0,0,0,26.039H225.24A13.019,13.019,0,0,0,238.26,114.573Zm0,104.157a13.019,13.019,0,0,0-13.02-13.02H108.063a13.02,13.02,0,1,0,0,26.039H225.24A13.019,13.019,0,0,0,238.26,218.73Zm14.622,90.555a13.019,13.019,0,1,0-13.49-22.271,140.368,140.368,0,0,1-72.74,20.249c-77.533,0-140.612-63.079-140.612-140.612S89.119,26.039,166.652,26.039,307.264,89.119,307.264,166.652a140.04,140.04,0,0,1-23.842,78.042,13.019,13.019,0,1,0,21.645,14.474A166.565,166.565,0,0,0,48.811,48.811,166.667,166.667,0,0,0,252.882,309.286Zm0,0" fill="url(#linear-gradient)" />
           </svg>
         </div>
         <div class="menu-middle">
-          <a href="/index.html"
-            ><img class="mobile-logo" src="/resources/img/mobile-logo.png"
-          /></a>
+          <a href="/index.html"><img class="mobile-logo" src="/resources/img/mobile-logo.png" /></a>
         </div>
 
         <div class="menu-right"></div>
@@ -65,48 +41,24 @@
     </nav>
     <div class="contact-form-container">
       <h1 class="contact-form-heading">Contact</h1>
-      <p class="contact-form-description">
-        Do you have an idea for an article, or just wnat to give us feedback?
-        Drop us a line below
-      </p>
+      <p class="contact-form-description">Do you have an idea for an article, or just wnat to give us feedback? Drop us a line below</p>
 
-      <form class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" placeholder="Your full name" />
-        <h2 class="error" id="name-error">
-          Please enter a name longer than 5 characters
-        </h2>
+      <form action="https://evolution.heysiri.codes/wp-json/contact-form-7/v1/contact-forms/135/feedback" method="post" class="contact-form">
+        <label for="your-name">Name</label>
+        <input type="text" name="your-name" id="your-name" placeholder="Your full name" />
+        <h2 class="error" id="name-error">Please enter a name longer than 5 characters</h2>
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="example@example.com"
-        />
+        <label for="your-email">Email</label>
+        <input type="email" name="your-email" id="your-email" placeholder="example@example.com" />
         <h2 class="error" id="email-error">Please enter a valid email</h2>
 
-        <label for="subject">Subject</label>
-        <input
-          type="text"
-          name="subject"
-          id="subject"
-          placeholder="What can we help you with?"
-        />
-        <h2 class="error" id="subject-error">
-          Please enter a subject longer than 15 characters
-        </h2>
+        <label for="your-subject">Subject</label>
+        <input type="text" name="your-subject" id="your-subject" placeholder="What can we help you with?" />
+        <h2 class="error" id="subject-error">Please enter a subject longer than 15 characters</h2>
 
-        <label for="message">Message</label>
-        <input
-          type="text"
-          name="message"
-          id="message"
-          placeholder="Write your message here"
-        />
-        <h2 class="error" id="message-error">
-          Please enter a message longer than 25 characters
-        </h2>
+        <label for="your-message">Message</label>
+        <input type="text" name="your-message" id="your-message" placeholder="Write your message here" />
+        <h2 class="error" id="message-error">Please enter a message longer than 25 characters</h2>
         <input type="submit" class="button" />
       </form>
     </div>

@@ -1,11 +1,11 @@
 const contactForm = document.querySelector(".contact-form");
-const nameInput = document.querySelector("#name");
+const nameInput = document.querySelector("#your-name");
 const nameError = document.querySelector("#name-error");
-const email = document.querySelector("#email");
+const email = document.querySelector("#your-email");
 const emailError = document.querySelector("#email-error");
-const subject = document.querySelector("#subject");
+const subject = document.querySelector("#your-subject");
 const subjectError = document.querySelector("#subject-error");
-const messageInput = document.querySelector("#message");
+const messageInput = document.querySelector("#your-message");
 const messageError = document.querySelector("#message-error");
 
 function validateForm() {
@@ -47,9 +47,7 @@ function validateForm() {
   if (namePassed && subjectPassed && emailPassed && messagePassed) {
     contactForm.style.display = "none";
     document.querySelector(".contact-form-heading").innerHTML = `Thank you!`;
-    document.querySelector(
-      ".contact-form-description"
-    ).innerHTML = `We will be in contact with you soon.`;
+    document.querySelector(".contact-form-description").innerHTML = `We will be in contact with you soon.`;
   }
 }
 
