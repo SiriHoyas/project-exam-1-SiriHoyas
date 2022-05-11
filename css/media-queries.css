@@ -29,9 +29,9 @@
         justify-content: center;
         background-color: var(--main-bg-color);
         margin: 0;
-        box-shadow: var(--box-shadow);
+        /* box-shadow: var(--box-shadow);
         position: relative;
-        z-index: -1;
+        z-index: -1; */
       
     }
     
