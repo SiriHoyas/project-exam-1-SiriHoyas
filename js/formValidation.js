@@ -1,14 +1,14 @@
 const contactForm = document.querySelector(".contact-form");
-const nameInput = document.querySelector("#your-name");
+const nameInput = document.querySelector("#yourName");
 const nameError = document.querySelector("#name-error");
-const email = document.querySelector("#your-email");
+const email = document.querySelector("#yourEmail");
 const emailError = document.querySelector("#email-error");
-const subject = document.querySelector("#your-subject");
+const subject = document.querySelector("#yourSubject");
 const subjectError = document.querySelector("#subject-error");
-const messageInput = document.querySelector("#your-message");
+const messageInput = document.querySelector("#yourMessage");
 const messageError = document.querySelector("#message-error");
 
-function validateForm() {
+async function validateAndSubmitForm(event) {
   event.preventDefault();
 
   let namePassed = false;
@@ -48,10 +48,24 @@ function validateForm() {
     contactForm.style.display = "none";
     document.querySelector(".contact-form-heading").innerHTML = `Thank you!`;
     document.querySelector(".contact-form-description").innerHTML = `We will be in contact with you soon.`;
+    const response = await fetch("https://evolution.heysiri.codes/wp-json/contact-form-7/v1/contact-forms/149/feedback", {
+      method: "POST",
+      body: JSON.stringify({
+        yourName: nameInput.value,
+        yourEmail: email.value,
+        yourSubject: subject.value,
+        yourMessage: messageInput.value,
+      }),
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    const json = await response.json();
+    console.log(json);
   }
 }
 
-contactForm.addEventListener("submit", validateForm);
+contactForm.addEventListener("submit", validateAndSubmitForm);
 
 function checkLength(value, length) {
   if (value.trim().length > length) {

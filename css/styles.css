@@ -383,3 +383,19 @@ width: 60%;
 .disable-scroll {
     overflow: hidden;
 }
+
+.add-comment {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.add-comment label {
+    color: var(--subheading-white);
+}
+
+.add-comment input {
+    width: 100%;
+}

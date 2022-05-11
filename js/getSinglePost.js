@@ -4,15 +4,14 @@ const querystring = document.location.search;
 const params = new URLSearchParams(querystring);
 const id = params.get("id");
 
-const urlForSinglePost =
-  "https://evolution.heysiri.codes/wp-json/wp/v2/posts/" + id;
+const urlForSinglePost = "https://evolution.heysiri.codes/wp-json/wp/v2/posts/" + id;
 
 async function getContentAndRenderSinglePost() {
   const result = await getContent(urlForSinglePost);
-  const postSpecificContainer = document.querySelector(
-    ".post-spesific-container"
-  );
+  const postSpecificContainer = document.querySelector(".post-spesific-container");
   createHTMLForSinglePost(postSpecificContainer, result);
+  document.querySelector("#postId").setAttribute("value", `${result.id}`);
+  document.querySelector(".add-comment").addEventListener("click", handleFormSubmit);
 
   const imgClass = document.querySelector(".post-featured-img");
   console.log(imgClass);
@@ -28,13 +27,9 @@ async function getContentAndRenderSinglePost() {
   }
 
   function expand() {
-    document.querySelector(
-      ".modal"
-    ).innerHTML = `<img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="expanded-img">`;
+    document.querySelector(".modal").innerHTML = `<img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="expanded-img">`;
     document.querySelector(".modal").style.display = "flex";
-    document
-      .querySelector(".blog-post-spesific-body")
-      .classList.add("disable-scroll");
+    document.querySelector(".blog-post-spesific-body").classList.add("disable-scroll");
   }
 
   const backBtn = document.querySelector(".back-btn");
@@ -51,9 +46,26 @@ function createHTMLForSinglePost(container, result) {
   <span class="category">${convertCategories(result.categories[0])}</span>
   <h1>${result.title.rendered}</h1>
   <p>${result.acf.subheading}</p>
-  <img src="${result.featured_media_src_url}" alt="${
-    result.acf.imgAlt
-  }" class="post-featured-img">
+  <img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="post-featured-img">
   <article>${result.acf.paragraph}</article>
   </div>`;
+}
+
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  console.log(event.target.form);
+  const [postId, name, email, comment] = event.target.elements;
+
+  const data = JSON.stringify({
+    post: postId.value,
+    author_name: name.value,
+    author_email: email.value,
+    content: comment.value,
+  });
+  console.log(data);
+  //   const minListe = ["ABC123", "Siripus", "siri@skjervold.me", "comment"];
+  // const [postId, name, email, comment] = minListe;
+  // const postId = minListe[0];
+  // const name = minListe[1];
 }
