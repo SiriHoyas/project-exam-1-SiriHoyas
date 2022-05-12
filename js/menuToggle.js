@@ -6,5 +6,3 @@ function toggleMenu() {
 const menuButton = document.querySelector(".menu-icon");
 
 menuButton.onclick = toggleMenu;
-
-const menuOpen = document.getElementById(".navbar-open");
