@@ -9,6 +9,7 @@
     --ecotech-gradient: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 100%);
     --ecotech-gradient-main-green: linear-gradient(45deg, rgba(13,80,65,1) 48%, rgba(26,169,213,1) 100%);
     --ecotech-gradient-main-blue: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 46%);
+    --loader-gradient:  linear-gradient(90deg, rgba(36,37,38,1) 42%, rgba(47,48,50,1) 100%);
     --box-shadow: 10px 0px 21px 4px rgba(0,0,0,0.57);
 
 }
@@ -219,6 +220,35 @@ font-size: .9rem;
 .heading-newest-reviews {
     text-align: center;
     margin-bottom: 10;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    
+    padding: 20px;
+}
+.long, .short {
+width: 150px;
+height: 5px;
+border-radius: 25px;
+background-image: var(--loader-gradient);
+background-size: 500%;
+animation: loading 1.5s infinite alternate;
+}
+.long {
+    margin-bottom: 20px;
+}
+.short {
+ width: 100px;
+}
+
+
+@keyframes loading {
+    0% {background-position: left;}
+    50% {background-position: center;}
+    100% {background-position: right;}
 }
 
 /* Contact.html */

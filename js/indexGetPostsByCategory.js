@@ -6,12 +6,13 @@ const getPostByCategory = "https://evolution.heysiri.codes/wp-json/wp/v2/posts?c
 async function renderContentLatestReviews() {
   try {
     const result = await getContent(getPostByCategory);
-    const newestPostsContainer = document.querySelector(".new-reviews-content");
+    const newestReviewsContainer = document.querySelector(".new-reviews-content");
+    newestReviewsContainer.innerHTML = "";
     for (let i = 0; i < result.length; i++) {
       if (i === 3) {
         break;
       }
-      latestReviewsCreateHTML(newestPostsContainer, result[i]);
+      latestReviewsCreateHTML(newestReviewsContainer, result[i]);
     }
   } catch (error) {}
 }

@@ -172,6 +172,14 @@
     background-color: var(--accent-blue);
 }
 
+.long {
+    height: 10px;
+}
+.short {
+    height: 10px;
+    margin-bottom: 30px;
+}
+
 /* Contact.html */
 .contact-form-container {
     width: 50vw;

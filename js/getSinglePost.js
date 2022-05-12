@@ -51,21 +51,14 @@ function createHTMLForSinglePost(container, result) {
   </div>`;
 }
 
-function handleFormSubmit(event) {
-  event.preventDefault();
+// // function handleFormSubmit(event) {
+// //   event.preventDefault();
+// //   const [postId, name, email, comment] = event.target.elements;
 
-  console.log(event.target.form);
-  const [postId, name, email, comment] = event.target.elements;
-
-  const data = JSON.stringify({
-    post: postId.value,
-    author_name: name.value,
-    author_email: email.value,
-    content: comment.value,
-  });
-  console.log(data);
-  //   const minListe = ["ABC123", "Siripus", "siri@skjervold.me", "comment"];
-  // const [postId, name, email, comment] = minListe;
-  // const postId = minListe[0];
-  // const name = minListe[1];
-}
+// //   const data = JSON.stringify({
+// //     post: postId.value,
+// //     author_name: name.value,
+// //     author_email: email.value,
+// //     content: comment.value,
+//   });
+console.log(data);
