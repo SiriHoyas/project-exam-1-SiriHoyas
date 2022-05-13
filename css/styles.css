@@ -329,7 +329,36 @@ margin-top: 20px;
 width: 60%;
 }
 
-/*Posts.html*/
+/*blog.html*/
+
+.blog-main-content {
+    margin-top: 60px;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-button-container {
+    margin-bottom: 10px;
+    width: 90vw;
+    display: flex;
+       
+}
+
+.filter-btn {
+    background-color: var(--main-bg-color);
+    color: var(--subheading-white);
+    font-size: .6rem;
+    padding: 5px 15px 5px 15px;
+    margin-right: 5px;
+}
+
+.filter-btn-active {
+    background-color: var(--accent-green);
+}
 
 .blog-main-content {
     display: flex;
