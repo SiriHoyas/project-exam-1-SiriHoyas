@@ -350,7 +350,10 @@ width: 60%;
 
 .filter-btn {
     background-color: var(--main-bg-color);
-    color: var(--subheading-white);
+    color: var(--heading-white);  
+    border: 1.9px solid var(--accent-green);
+    border-radius: 50px;  
+    text-align: center; 
     font-size: .6rem;
     padding: 5px 15px 5px 15px;
     margin-right: 5px;
