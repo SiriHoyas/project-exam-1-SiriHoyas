@@ -28,6 +28,10 @@ body {
     margin: 0;
 }
 
+:focus {
+    outline: 3px solid skyblue
+}
+
 h1 {
     color: var(--heading-white);
     text-align: center;
@@ -164,7 +168,7 @@ position: fixed;
 
 .index-main-content h1 {
     font-weight: 100;
-    font-size: .9rem;
+    font-size: 1rem;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -210,7 +214,7 @@ position: fixed;
 .post-content-wrapper h2 {
 margin-top: 0;
 margin-bottom: 5px;
-font-size: .9rem;
+font-size: 1rem;
 }
 
 .post-content-wrapper p {
