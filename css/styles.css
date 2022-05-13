@@ -28,10 +28,6 @@ body {
     margin: 0;
 }
 
-:focus {
-    outline: 3px solid skyblue
-}
-
 h1 {
     color: var(--heading-white);
     text-align: center;

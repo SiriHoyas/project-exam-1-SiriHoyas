@@ -40,6 +40,7 @@ function blogCreateHTML(container, result) {
 const newsFilterBtn = document.querySelector(".news-filter");
 const reviewsFilterBtn = document.querySelector(".reviews-filter");
 const chargingFilterBtn = document.querySelector(".charging-filter");
+const resetFilters = document.querySelector(".reset-filters");
 
 newsFilterBtn.addEventListener("click", () => {
   renderFilteredContent(4);
