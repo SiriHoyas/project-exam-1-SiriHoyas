@@ -1,29 +1,19 @@
 import { getContent } from "./components/getContent.js";
+import { createHTMLForPosts } from "./components/createHTMLPosts.js";
 import { convertCategories } from "./components/categoryConverter.js";
 
 const showMoreBtn = document.querySelector(".show-more-btn");
+const postsContainer = document.querySelector(".posts-container");
 
 async function showMore() {
   try {
     const url = "https://evolution.heysiri.codes/wp-json/wp/v2/posts?offset=10";
     const result = await getContent(url);
     for (let i = 0; i < result.length; i++) {
-      showMoreCreateHTML(result[i]);
+      createHTMLForPosts(postsContainer, result[i]);
     }
     showMoreBtn.style.display = "none";
   } catch (error) {}
-}
-
-function showMoreCreateHTML(result) {
-  const postsContainer = document.querySelector(".posts-container");
-  postsContainer.innerHTML += `<a href="blogPostSpecific.html?id=${result.id}" class="posts-card">
-  <img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="posts-img">
-  <div class="posts-">
-  <span class="posts-category">${convertCategories(result.categories[0])}</span>
-  <h2>${result.title.rendered}</h2>
-  <p>${result.acf.subheading}</p>
-  </div>
-  </a>`;
 }
 
 showMoreBtn.addEventListener("click", showMore);

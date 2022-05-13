@@ -359,6 +359,11 @@ width: 60%;
     background-color: var(--accent-green);
 }
 
+.reset-filters {
+    color: var(--subheading-white);
+    display: none;
+}
+
 .blog-main-content {
     display: flex;
     flex-direction: column;
