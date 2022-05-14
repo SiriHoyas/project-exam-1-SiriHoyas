@@ -8,6 +8,7 @@ const postsContainer = document.querySelector(".posts-container");
 async function renderContentBlog() {
   try {
     const result = await getContent(getAllPosts);
+    postsContainer.innerHTML = "";
     for (let i = 0; i < result.length; i++) {
       createHTMLForPosts(postsContainer, result[i]);
     }
