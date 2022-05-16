@@ -1,6 +1,5 @@
 import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
-import { convertCategories } from "./components/categoryConverter.js";
 
 const urlReviews = "https://evolution.heysiri.codes/wp-json/wp/v2/posts?categories=5";
 

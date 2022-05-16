@@ -1,6 +1,4 @@
 import { getContent } from "./components/getContent.js";
-import { convertCategories } from "./components/categoryConverter.js";
-import { expandImg } from "./postSpesificImgModal.js";
 
 const querystring = document.location.search;
 const params = new URLSearchParams(querystring);
@@ -14,20 +12,60 @@ async function getContentAndRenderSinglePost() {
   const title = document.querySelector("title");
   title.innerHTML = `Evolution | ${result.title.rendered}`;
   createHTMLForSinglePost(postSpecificContainer, result);
-  expandImg(result);
 }
 
 getContentAndRenderSinglePost();
 
-function createHTMLForSinglePost(container, result) {
+async function createHTMLForSinglePost(container, result) {
+  const category = await getCategory(result.categories[0]);
   container.innerHTML = `
   <div class="post-specific-content">
-  <span class="category">${convertCategories(result.categories[0])}</span>
+  <span class="category">${category}</span>
   <h1>${result.title.rendered}</h1>
   <p>${result.acf.subheading}</p>
   <img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="post-featured-img">
   <article>${result.acf.paragraph}</article>
   </div>`;
+  expandImg(result);
+}
+
+async function getCategory(category) {
+  const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
+  const result = await fetch(url);
+  const json = await result.json();
+
+  for (let i = 0; i < json.length; i++) {
+    if (category === json[i].id) {
+      return json[i].name.toUpperCase();
+    }
+  }
+}
+
+function expandImg(result) {
+  const imgClass = document.querySelector(".post-featured-img");
+  console.log(imgClass);
+  const modal = document.querySelector(".modal");
+
+  imgClass.addEventListener("click", expand);
+  window.addEventListener("click", close);
+
+  function close(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      document.querySelector(".blog-post-spesific-body").classList.remove("disable-scroll");
+    }
+  }
+
+  function expand() {
+    document.querySelector(".modal").innerHTML = `<img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="expanded-img">`;
+    document.querySelector(".modal").style.display = "flex";
+    document.querySelector(".blog-post-spesific-body").classList.add("disable-scroll");
+  }
+
+  const backBtn = document.querySelector(".back-btn");
+  backBtn.addEventListener("click", function () {
+    console.log(history.back());
+  });
 }
 
 // document.querySelector(".add-comment").addEventListener("click", handleFormSubmit);

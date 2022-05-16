@@ -1,6 +1,5 @@
 import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
-import { convertCategories } from "./components/categoryConverter.js";
 
 const showMoreBtn = document.querySelector(".show-more-btn");
 const postsContainer = document.querySelector(".posts-container");
