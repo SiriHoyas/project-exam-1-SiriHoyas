@@ -31,8 +31,6 @@
         margin: 0;
         box-shadow: var(--box-shadow);
         position: relative;
-        z-index: -1;
-      
     }
     
     .menu-item {
@@ -183,6 +181,10 @@
 /* Contact.html */
 .contact-form-container {
     width: 50vw;
+}
+
+.contact-form .submit-btn {
+    width: 30%;
 }
 
 /*Posts.html*/
