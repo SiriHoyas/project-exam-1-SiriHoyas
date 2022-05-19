@@ -1,4 +1,4 @@
-export function expandImg(result) {
+function expandImg(result) {
   const imgClass = document.querySelector(".post-featured-img");
   console.log(imgClass);
   const modal = document.querySelector(".modal");
