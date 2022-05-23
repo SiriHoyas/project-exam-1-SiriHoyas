@@ -4,7 +4,7 @@ import { createHTMLForPosts } from "./components/createHTMLPosts.js";
 const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
 const postsContainer = document.querySelector(".posts-container");
 
-async function renderContentBlog() {
+export async function renderContentBlog() {
   try {
     const result = await getContent(getAllPosts);
     postsContainer.innerHTML = "";

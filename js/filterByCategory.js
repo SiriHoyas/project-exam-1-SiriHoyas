@@ -1,5 +1,6 @@
 import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
+import { renderContentBlog } from "./blogRenderContent.js";
 
 const postsContainer = document.querySelector(".posts-container");
 async function renderFilteredContent(categoryNumber) {
@@ -17,23 +18,31 @@ const newsFilterBtn = document.querySelector(".news-filter");
 const reviewsFilterBtn = document.querySelector(".reviews-filter");
 const chargingFilterBtn = document.querySelector(".charging-filter");
 const resetFilters = document.querySelector(".reset-filters");
+const blogHeading = document.querySelector(".blog-heading");
+const showMoreBtn = document.querySelector(".show-more-btn");
 
 newsFilterBtn.addEventListener("click", () => {
   renderFilteredContent(4);
   styleButtons(newsFilterBtn, reviewsFilterBtn, chargingFilterBtn);
-  resetFilters.style.display = "revert";
+  resetFilters.style.display = "flex";
+  blogHeading.innerHTML = "NEWS";
+  showMoreBtn.style.display = "none";
 });
 
 reviewsFilterBtn.addEventListener("click", () => {
   renderFilteredContent(5);
   styleButtons(reviewsFilterBtn, newsFilterBtn, chargingFilterBtn);
-  resetFilters.style.display = "revert";
+  resetFilters.style.display = "flex";
+  blogHeading.innerHTML = "REVIEWS";
+  showMoreBtn.style.display = "none";
 });
 
 chargingFilterBtn.addEventListener("click", () => {
   renderFilteredContent(6);
   styleButtons(chargingFilterBtn, reviewsFilterBtn, newsFilterBtn);
-  resetFilters.style.display = "revert";
+  resetFilters.style.display = "flex";
+  blogHeading.innerHTML = "CHARGING";
+  showMoreBtn.style.display = "none";
 });
 
 function styleButtons(activeButton, inactiveButton1, inactiveButton2) {
@@ -41,3 +50,12 @@ function styleButtons(activeButton, inactiveButton1, inactiveButton2) {
   inactiveButton1.style.backgroundColor = "var( --main-bg-color)";
   inactiveButton2.style.backgroundColor = "var( --main-bg-color)";
 }
+
+resetFilters.addEventListener("click", () => {
+  resetFilters.style.display = "none";
+  newsFilterBtn.style.backgroundColor = "var( --main-bg-color)";
+  reviewsFilterBtn.style.backgroundColor = "var( --main-bg-color)";
+  chargingFilterBtn.style.backgroundColor = "var( --main-bg-color)";
+  showMoreBtn.style.display = "revert";
+  renderContentBlog();
+});

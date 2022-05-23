@@ -43,10 +43,19 @@
     </nav>
     <section class="blog-spesific-main-content">
       <div class="modal"></div>
-      <button class="button back-btn">BACK</button>
+      <div class="button-container back-btn">
+        <div class="back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13.244" height="20.546" viewBox="0 0 13.244 20.546">
+            <g id="layer1" transform="translate(15.22 312.511) rotate(180)">
+              <path id="path9429" d="M3.534,291.965a1.462,1.462,0,0,0-.962,2.589l8.942,7.66-8.942,7.658a1.462,1.462,0,1,0,1.9,2.212l10.238-8.759a1.461,1.461,0,0,0,0-2.223L4.47,292.334a1.461,1.461,0,0,0-.936-.368Z" transform="translate(0 0)" fill="#4ba1af" />
+            </g>
+          </svg>
+          <span class="back">Back</span>
+        </div>
+      </div>
       <div class="post-spesific-container"></div>
     </section>
-    <form class="add-comment">
+    <form action="https://evolution.heysiri.codes/wp-json/wp/v2/comments" method="post" class="add-comment">
       <h2>Comment on this post</h2>
       <input type="hidden" id="postId" value="" />
       <label for="comment-name">Name</label>

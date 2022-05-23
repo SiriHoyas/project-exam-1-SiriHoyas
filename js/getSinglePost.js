@@ -27,6 +27,22 @@ async function createHTMLForSinglePost(container, result) {
   <article>${result.acf.paragraph}</article>
   </div>`;
   expandImg(result);
+
+  document.querySelector(".add-comment").addEventListener("click", handleFormSubmit);
+
+  document.querySelector("#postId").setAttribute("value", `${result.id}`);
+  function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const [postId, name, email, comment] = event.target.elements;
+
+    const data = JSON.stringify({
+      post: postId.value,
+      author_name: name.value,
+      author_email: email.value,
+      content: comment.value,
+    });
+  }
 }
 
 async function getCategory(category) {
@@ -62,23 +78,8 @@ function expandImg(result) {
     document.querySelector(".blog-post-spesific-body").classList.add("disable-scroll");
   }
 
-  const backBtn = document.querySelector(".back-btn");
+  const backBtn = document.querySelector(".back");
   backBtn.addEventListener("click", function () {
     console.log(history.back());
   });
 }
-
-// document.querySelector(".add-comment").addEventListener("click", handleFormSubmit);
-
-// document.querySelector("#postId").setAttribute("value", `${result.id}`);
-// // function handleFormSubmit(event) {
-// //   event.preventDefault();
-// //   const [postId, name, email, comment] = event.target.elements;
-
-// //   const data = JSON.stringify({
-// //     post: postId.value,
-// //     author_name: name.value,
-// //     author_email: email.value,
-// //     content: comment.value,
-//   });
-// console.log(data);

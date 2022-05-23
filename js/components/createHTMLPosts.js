@@ -1,5 +1,3 @@
-// import { getCategory } from "./components/categoryConverter.js";
-
 export async function createHTMLForPosts(container, result) {
   const category = await getCategory(result.categories[0]);
 

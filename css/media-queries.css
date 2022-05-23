@@ -1,6 +1,35 @@
+/* Media Query for tablet */
+
+@media screen and (min-width: 768px) {
+
+    .post-spesific-container, .about-us-post-container {
+        width: 80vw;   
+    }
+
+    .button-container {
+        width: 80vw;
+    }
+
+    .about-us-post-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .add-comment {
+        width: 80vw;
+    }
+
+    .post-card {
+        width: 70vw;
+    }
+
+    .filter-button-container {
+        width: 70vw;
+    }
+}
+
 /* Media Query for laptop */
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1024px) {
     .navbar {
         height: 80px; 
         box-shadow: none;  
@@ -70,7 +99,7 @@
     
 }
 
-    .post-card {
+.post-card {
     flex-direction: column;
     height: 250px;
     width: 25vw;
@@ -78,14 +107,20 @@
     }
 
 
-    .thumbnail-img {
+.thumbnail-img {
     width: 100%;
     height: 60%;
     object-fit: cover;
 }
+
+.post-content-wrapper {
+    margin-top: 15px;
+}
+
 .prev, .next {
     display: revert;
 }
+
 .slide1,
 .slide2,
 .slide3 {
@@ -189,7 +224,9 @@
 
 /*Posts.html*/
 
-
+.filter-button-container {
+    width: 90vw;
+}
 
 .posts-container {
     display: grid;
@@ -198,6 +235,7 @@
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     width: 90vw;
+    justify-items: center;
     margin: 0 auto;
 }
 .posts-card {
@@ -218,6 +256,37 @@
 
 .post-spesific-container, .about-us-post-container {
     width: 60vw;   
+}
+
+.button-container {
+    width: 60vw;
+}
+
+.button-container svg {
+    height: 1rem;
+}
+
+.button-container span {
+    font-size: 1rem;
+}
+.post-spesific-container h1 {
+    font-size: 2rem;
+}
+
+.expanded-img {
+    width: 70vw;
+}
+
+.post-spesific-container article {
+    font-size: 1rem;
+}
+
+.add-comment {
+    width: 60vw;
+}
+
+.about-us-post-container {
+    margin-top: 60px;
 }
     
 }
