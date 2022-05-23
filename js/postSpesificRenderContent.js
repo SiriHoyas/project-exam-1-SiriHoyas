@@ -28,23 +28,42 @@ async function createHTMLForSinglePost(container, result) {
   </div>`;
   expandImg(result);
 
-  document.querySelector(".add-comment").addEventListener("click", handleFormSubmit);
-
   document.querySelector("#postId").setAttribute("value", `${result.id}`);
-  function handleFormSubmit(event) {
-    event.preventDefault();
+}
 
-    const [postId, name, email, comment] = event.target.elements;
+// Send comment to Wordpress
+const commentContainer = document.querySelector(".add-comment");
+commentContainer.addEventListener("submit", handleFormSubmit);
 
-    const data = JSON.stringify({
-      post: postId.value,
-      author_name: name.value,
-      author_email: email.value,
-      content: comment.value,
-    });
+async function handleFormSubmit(event) {
+  event.preventDefault();
+
+  const [postId, name, email, comment] = event.target.elements;
+
+  const data = JSON.stringify({
+    post: postId.value,
+    author_name: name.value,
+    author_email: email.value,
+    content: comment.value,
+  });
+
+  const response = await fetch("https://evolution.heysiri.codes/wp-json/wp/v2/comments", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: data,
+  });
+  if (response.ok) {
+    commentContainer.innerHTML = "";
+    commentContainer.innerHTML = `<div class="comment-submitted">Thanks! Your comment has been submitted.</div>`;
+  } else {
+    const json = await response.json();
+    console.log(json);
   }
 }
 
+// Convert categories from number to name
 async function getCategory(category) {
   const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
   const result = await fetch(url);
@@ -57,6 +76,7 @@ async function getCategory(category) {
   }
 }
 
+// Expand image on click
 function expandImg(result) {
   const imgClass = document.querySelector(".post-featured-img");
   console.log(imgClass);
@@ -80,6 +100,6 @@ function expandImg(result) {
 
   const backBtn = document.querySelector(".back");
   backBtn.addEventListener("click", function () {
-    console.log(history.back());
+    history.back();
   });
 }

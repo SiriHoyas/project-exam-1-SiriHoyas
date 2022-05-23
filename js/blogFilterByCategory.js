@@ -57,5 +57,6 @@ resetFilters.addEventListener("click", () => {
   reviewsFilterBtn.style.backgroundColor = "var( --main-bg-color)";
   chargingFilterBtn.style.backgroundColor = "var( --main-bg-color)";
   showMoreBtn.style.display = "revert";
+  blogHeading.innerHTML = "Latest posts";
   renderContentBlog();
 });

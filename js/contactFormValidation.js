@@ -49,6 +49,7 @@ async function validateAndSubmitForm(event) {
     document.querySelector(".contact-form-heading").innerHTML = `Thank you!`;
     document.querySelector(".contact-form-description").innerHTML = `We will be in contact with you soon.`;
 
+    // Send contact form to wordpress
     const response = await fetch("https://evolution.heysiri.codes/wp-json/contact-form-7/v1/contact-forms/149/feedback", {
       method: "POST",
       body: JSON.stringify({

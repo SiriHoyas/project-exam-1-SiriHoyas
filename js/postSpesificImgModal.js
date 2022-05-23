@@ -18,9 +18,4 @@ function expandImg(result) {
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".blog-post-spesific-body").classList.add("disable-scroll");
   }
-
-  const backBtn = document.querySelector(".back-btn");
-  backBtn.addEventListener("click", function () {
-    console.log(history.back());
-  });
 }

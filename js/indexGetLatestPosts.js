@@ -2,14 +2,13 @@ import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
 
 const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
+const slide1Container = document.querySelector(".slide1");
+const slide2Container = document.querySelector(".slide2");
+const slide3Container = document.querySelector(".slide3");
 
 async function renderContentLatestPosts() {
   try {
     const result = await getContent(getAllPosts);
-
-    const slide1Container = document.querySelector(".slide1");
-    const slide2Container = document.querySelector(".slide2");
-    const slide3Container = document.querySelector(".slide3");
 
     slide1Container.innerHTML = "";
     slide2Container.innerHTML = "";
