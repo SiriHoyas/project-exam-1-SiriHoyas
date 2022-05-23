@@ -59,7 +59,7 @@ async function handleFormSubmit(event) {
     commentContainer.innerHTML = `<div class="comment-submitted">Thanks! Your comment has been submitted.</div>`;
   } else {
     const json = await response.json();
-    console.log(json);
+    commentContainer.innerHTML = `<div class="comment-error">Your comment could not be posted. Please try again</div>`;
   }
 }
 
