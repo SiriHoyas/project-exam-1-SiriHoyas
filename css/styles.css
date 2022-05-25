@@ -6,9 +6,6 @@
     --subheading-white: #b9b9b9;
     --accent-blue: #4ba1af;
     --accent-green: #0D5041;
-    --ecotech-gradient: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 100%);
-    --ecotech-gradient-main-green: linear-gradient(45deg, rgba(13,80,65,1) 48%, rgba(26,169,213,1) 100%);
-    --ecotech-gradient-main-blue: linear-gradient(45deg, rgba(13,80,65,1) 0%, rgba(26,169,213,1) 46%);
     --loader-gradient:  linear-gradient(90deg, rgba(36,37,38,1) 42%, rgba(47,48,50,1) 100%);
     --box-shadow: 0px 0px 12px 0px rgba(0,0,0,.2);
 }
@@ -46,10 +43,6 @@ h3 {
     font-size: .5rem;
 }
 
-h4 {
-    color: var(--accent-blue);
-    font-size: .5rem;
-}
 
 p {
     color: var(--subheading-white);
