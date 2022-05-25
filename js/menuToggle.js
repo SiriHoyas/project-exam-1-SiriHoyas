@@ -5,4 +5,9 @@ function toggleMenu() {
 
 const menuButton = document.querySelector(".menu-icon");
 
-menuButton.onclick = toggleMenu;
+menuButton.addEventListener("click", toggleMenu);
+menuButton.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13 || e.keyCode === 32) {
+    toggleMenu();
+  }
+});

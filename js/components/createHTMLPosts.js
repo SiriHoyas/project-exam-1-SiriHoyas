@@ -7,11 +7,11 @@ export async function createHTMLForPosts(container, result) {
         <div class="post-content-wrapper">
         <span class="category">${category}</span>
           <h2>${result.title.rendered}</h2>
-         <p>${result.acf.subheading}<p>
+          <p>${result.acf.subheading}<p>
         </div>
     </a>`;
 }
-
+// Category converter
 async function getCategory(category) {
   const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
   const result = await fetch(url);
