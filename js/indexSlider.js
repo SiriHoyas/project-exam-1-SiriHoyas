@@ -35,23 +35,23 @@ function checkState() {
     slide2.classList.remove("active");
     slide3.classList.remove("active");
     indicator1.style.backgroundColor = "var(--accent-blue)";
-    indicator2.style.backgroundColor = "#5A5A5A";
-    indicator3.style.backgroundColor = "#5A5A5A";
+    indicator2.style.backgroundColor = "var(--accent-grey)";
+    indicator3.style.backgroundColor = "var(--accent-grey)";
   }
   if (counter === 2) {
     slide2.classList.add("active");
     slide1.classList.remove("active");
     slide3.classList.remove("active");
-    indicator1.style.backgroundColor = "#5A5A5A";
+    indicator1.style.backgroundColor = "var(--accent-grey)";
     indicator2.style.backgroundColor = "var(--accent-blue)";
-    indicator3.style.backgroundColor = "#5A5A5A";
+    indicator3.style.backgroundColor = "var(--accent-grey)";
   }
   if (counter === 3) {
     slide3.classList.add("active");
     slide1.classList.remove("active");
     slide2.classList.remove("active");
-    indicator1.style.backgroundColor = "#5A5A5A";
-    indicator2.style.backgroundColor = "#5A5A5A";
+    indicator1.style.backgroundColor = "var(--accent-grey)";
+    indicator2.style.backgroundColor = "var(--accent-grey)";
     indicator3.style.backgroundColor = "var(--accent-blue)";
   }
 }
@@ -61,12 +61,14 @@ prevBtn.addEventListener("click", prev);
 
 nextBtn.addEventListener("keyup", (e) => {
   if (e.keyCode === 13 || e.keyCode === 32) {
+    // enter = 13, space = 32
     next();
   }
 });
 
 prevBtn.addEventListener("keyup", (e) => {
   if (e.keyCode === 13 || e.keyCode === 32) {
+    // enter = 13, space = 32
     prev();
   }
 });

@@ -1,15 +1,16 @@
 const contactForm = document.querySelector(".contact-form");
 const nameInput = document.querySelector("#yourName");
-const nameError = document.querySelector("#name-error");
 const email = document.querySelector("#yourEmail");
-const emailError = document.querySelector("#email-error");
 const subject = document.querySelector("#yourSubject");
-const subjectError = document.querySelector("#subject-error");
 const messageInput = document.querySelector("#yourMessage");
-const messageError = document.querySelector("#message-error");
 
 async function validateAndSubmitForm(event) {
   event.preventDefault();
+
+  const nameError = document.querySelector("#name-error");
+  const emailError = document.querySelector("#email-error");
+  const subjectError = document.querySelector("#subject-error");
+  const messageError = document.querySelector("#message-error");
 
   let namePassed = false;
   let emailPassed = false;
@@ -53,10 +54,10 @@ async function validateAndSubmitForm(event) {
     const response = await fetch("https://evolution.heysiri.codes/wp-json/contact-form-7/v1/contact-forms/149/feedback", {
       method: "POST",
       body: JSON.stringify({
-        yourName: nameInput.value,
-        yourEmail: email.value,
-        yourSubject: subject.value,
-        yourMessage: messageInput.value,
+        yourName: nameInput.value.trim(),
+        yourEmail: email.value.trim(),
+        yourSubject: subject.value.trim(),
+        yourMessage: messageInput.value.trim(),
       }),
       headers: {
         "Content-Type": "multipart/form-data",

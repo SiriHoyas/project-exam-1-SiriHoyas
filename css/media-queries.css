@@ -6,15 +6,11 @@
         width: 80vw;   
     }
 
-    .button-container {
-        width: 80vw;
-    }
-
     .about-us-post-container h1 {
         font-size: 1.8rem;
     }
 
-    .add-comment {
+    .add-comment, .button-container {
         width: 80vw;
     }
 
@@ -22,13 +18,10 @@
         width: 70vw;
     }
 
-    .filter-button-container {
+    .filter-button-container, .posts-container {
         width: 70vw;
     }
 
-    .posts-container {
-        width: 70vw;
-    }
 }
 
 /* Media Query for laptop */
@@ -132,7 +125,7 @@
     .slide1,
     .slide2,
     .slide3 {
-        display: flex;
+        display: none;
         gap: 10px;
         margin: 0 auto;
         animation-name: FadeIn;
@@ -149,18 +142,6 @@
         100% {
             opacity: 1;
         }
-    }
-
-    .slide1 {
-        display: none;   
-    }
-
-    .slide2 {
-        display: none;
-    }
-
-    .slide3 {
-        display: none;
     }
 
     .active {
@@ -201,7 +182,7 @@
         height: 8px;
         width: 8px;
         border-radius: 50%;
-        background-color: #5A5A5A;
+        background-color: var(--accent-grey);
     }
 
     .indicator-1 {

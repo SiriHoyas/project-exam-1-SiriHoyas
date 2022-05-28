@@ -1,21 +1,23 @@
-import { errorMessage } from "./components/errorMessage.js";
 import { getContent } from "./components/getContent.js";
+import { expandImg } from "./imgModal.js";
 
-const querystring = document.location.search;
-const params = new URLSearchParams(querystring);
-const id = params.get("id");
+async function renderSinglePost() {
+  const querystring = document.location.search;
+  const params = new URLSearchParams(querystring);
+  const id = params.get("id");
+  const urlForSinglePost = "https://evolution.heysiri.codes/wp-json/wp/v2/posts/" + id;
 
-const urlForSinglePost = "https://evolution.heysiri.codes/wp-json/wp/v2/posts/" + id;
-
-async function getContentAndRenderSinglePost() {
-  const result = await getContent(urlForSinglePost);
-  const postSpecificContainer = document.querySelector(".post-spesific-container");
-  const title = document.querySelector("title");
-  title.innerHTML = `Evolution | ${result.title.rendered}`;
-  createHTMLForSinglePost(postSpecificContainer, result);
+  try {
+    const result = await getContent(urlForSinglePost);
+    const postSpecificContainer = document.querySelector(".post-spesific-container");
+    const title = document.querySelector("title");
+    title.innerHTML = `Evolution | ${result.title.rendered}`;
+    createHTMLForSinglePost(postSpecificContainer, result);
+    expandImg(result);
+  } catch (error) {}
 }
 
-getContentAndRenderSinglePost();
+renderSinglePost();
 
 async function createHTMLForSinglePost(container, result) {
   const category = await getCategory(result.categories[0]);
@@ -67,7 +69,7 @@ async function handleFormSubmit(event) {
 // Convert categories from number to name
 async function getCategory(category) {
   try {
-    const url = "https://ev olution.heysiri.codes/wp-json/wp/v2/categories";
+    const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
     const result = await fetch(url);
     const json = await result.json();
 
@@ -81,30 +83,7 @@ async function getCategory(category) {
   }
 }
 
-// Expand image on click
-function expandImg(result) {
-  const imgClass = document.querySelector(".post-featured-img");
-  console.log(imgClass);
-  const modal = document.querySelector(".modal");
-
-  imgClass.addEventListener("click", expand);
-  window.addEventListener("click", close);
-
-  function close(event) {
-    if (event.target === modal) {
-      modal.style.display = "none";
-      document.querySelector(".blog-post-spesific-body").classList.remove("disable-scroll");
-    }
-  }
-
-  function expand() {
-    document.querySelector(".modal").innerHTML = `<img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="expanded-img">`;
-    document.querySelector(".modal").style.display = "flex";
-    document.querySelector(".blog-post-spesific-body").classList.add("disable-scroll");
-  }
-
-  const backBtn = document.querySelector(".back");
-  backBtn.addEventListener("click", function () {
-    history.back();
-  });
-}
+const backBtn = document.querySelector(".back");
+backBtn.addEventListener("click", function () {
+  history.back();
+});

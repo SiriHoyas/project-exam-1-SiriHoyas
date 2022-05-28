@@ -1,4 +1,4 @@
-function expandImg(result) {
+export function expandImg(post) {
   const imgClass = document.querySelector(".post-featured-img");
   console.log(imgClass);
   const modal = document.querySelector(".modal");
@@ -14,7 +14,7 @@ function expandImg(result) {
   }
 
   function expand() {
-    document.querySelector(".modal").innerHTML = `<img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="expanded-img">`;
+    document.querySelector(".modal").innerHTML = `<img src="${post.featured_media_src_url}" alt="${post.acf.imgAlt}" class="expanded-img">`;
     document.querySelector(".modal").style.display = "flex";
     document.querySelector(".blog-post-spesific-body").classList.add("disable-scroll");
   }

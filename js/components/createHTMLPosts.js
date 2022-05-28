@@ -1,13 +1,13 @@
-export async function createHTMLForPosts(container, result) {
-  const category = await getCategory(result.categories[0]);
+export async function createHTMLForPosts(container, post) {
+  const category = await getCategory(post.categories[0]);
 
   container.innerHTML += `
-    <a href="blogPostSpecific.html?id=${result.id}" class="post-card">
-        <img src="${result.featured_media_src_url}" alt="${result.acf.imgAlt}" class="thumbnail-img">
+    <a href="blogPostSpecific.html?id=${post.id}" class="post-card">
+        <img src="${post.featured_media_src_url}" alt="${post.acf.imgAlt}" class="thumbnail-img">
         <div class="post-content-wrapper">
-        <span class="category">${category}</span>
-          <h2>${result.title.rendered}</h2>
-          <p>${result.acf.subheading}<p>
+          <span class="category">${category}</span>
+          <h2>${post.title.rendered}</h2>
+          <p>${post.acf.subheading}<p>
         </div>
     </a>`;
 }

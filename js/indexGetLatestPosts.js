@@ -1,16 +1,16 @@
-import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
 import { errorMessage } from "./components/errorMessage.js";
+import { getContent } from "./components/getContent.js";
 
-const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
 const slide1Container = document.querySelector(".slide1");
-const slide2Container = document.querySelector(".slide2");
-const slide3Container = document.querySelector(".slide3");
 
 async function renderContentLatestPosts() {
+  const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
+  const slide2Container = document.querySelector(".slide2");
+  const slide3Container = document.querySelector(".slide3");
+
   try {
     const result = await getContent(getAllPosts);
-
     slide1Container.innerHTML = "";
     slide2Container.innerHTML = "";
     slide3Container.innerHTML = "";

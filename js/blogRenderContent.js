@@ -1,11 +1,11 @@
-import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
 import { errorMessage } from "./components/errorMessage.js";
-
-const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
-const postsContainer = document.querySelector(".posts-container");
+import { getContent } from "./components/getContent.js";
 
 export async function renderContentBlog() {
+  const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
+  const postsContainer = document.querySelector(".posts-container");
+
   try {
     const result = await getContent(getAllPosts);
     postsContainer.innerHTML = "";
