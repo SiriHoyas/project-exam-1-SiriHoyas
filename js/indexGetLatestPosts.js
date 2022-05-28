@@ -1,5 +1,6 @@
 import { getContent } from "./components/getContent.js";
 import { createHTMLForPosts } from "./components/createHTMLPosts.js";
+import { errorMessage } from "./components/errorMessage.js";
 
 const getAllPosts = "https://evolution.heysiri.codes/wp-json/wp/v2/posts";
 const slide1Container = document.querySelector(".slide1");
@@ -23,7 +24,12 @@ async function renderContentLatestPosts() {
         createHTMLForPosts(slide3Container, result[i]);
       }
     }
-  } catch (error) {}
+  } catch (error) {
+    document.querySelector(".prev").style.display = "none";
+    document.querySelector(".next").style.display = "none";
+    document.querySelector(".slide-indicator-container").style.display = "none";
+    slide1Container.innerHTML = errorMessage("There was an error loading. Please refresh or try again later");
+  }
 }
 
 renderContentLatestPosts();

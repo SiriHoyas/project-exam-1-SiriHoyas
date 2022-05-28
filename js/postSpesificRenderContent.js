@@ -1,3 +1,4 @@
+import { errorMessage } from "./components/errorMessage.js";
 import { getContent } from "./components/getContent.js";
 
 const querystring = document.location.search;
@@ -65,14 +66,18 @@ async function handleFormSubmit(event) {
 
 // Convert categories from number to name
 async function getCategory(category) {
-  const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
-  const result = await fetch(url);
-  const json = await result.json();
+  try {
+    const url = "https://ev olution.heysiri.codes/wp-json/wp/v2/categories";
+    const result = await fetch(url);
+    const json = await result.json();
 
-  for (let i = 0; i < json.length; i++) {
-    if (category === json[i].id) {
-      return json[i].name.toUpperCase();
+    for (let i = 0; i < json.length; i++) {
+      if (category === json[i].id) {
+        return json[i].name.toUpperCase();
+      }
     }
+  } catch (error) {
+    return "No category found";
   }
 }
 

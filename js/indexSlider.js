@@ -58,3 +58,15 @@ function checkState() {
 
 nextBtn.addEventListener("click", next);
 prevBtn.addEventListener("click", prev);
+
+nextBtn.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13 || e.keyCode === 32) {
+    next();
+  }
+});
+
+prevBtn.addEventListener("keyup", (e) => {
+  if (e.keyCode === 13 || e.keyCode === 32) {
+    prev();
+  }
+});

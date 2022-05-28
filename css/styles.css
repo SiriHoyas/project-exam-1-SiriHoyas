@@ -101,6 +101,16 @@ input:focus, textarea:focus {
     color: black;
 }
 
+.error-message {
+    width: 90vw;
+    border: 1px solid rgb(136, 48, 48);
+    color: rgb(136, 48, 48);
+    padding: 1rem;
+    text-align: center;
+    font-size: .9em;
+
+}
+
 /* --- NAVIGATION BAR FOR MOBILE --- */
 
 nav {
@@ -177,10 +187,13 @@ margin-top: 60px;
 /*--- INDEX ---*/
 
 .index-main-content h1 {
+    font-family: "Beon", sans-serif;
     font-weight: 100;
     font-size: 1rem;
     margin-top: 20px;
     margin-bottom: 10px;
+    color: #4ba1af;
+
 }
 
 .newest-posts-container, .new-reviews-container {
@@ -234,6 +247,8 @@ font-size: 1rem;
 .heading-newest-reviews {
     text-align: center;
     margin-bottom: 10;
+    font-family: "Beon", sans-serif;
+    color: var(--subheading-white);
 }
 
 .loader {
@@ -336,7 +351,7 @@ animation: loading 1.5s infinite alternate;
 /*--- BLOG ---*/
 
 .posts-container {
-    margin-top: 100px;
+    width: 95vw;
 }
 
 .posts-container .post-card {
@@ -346,6 +361,12 @@ animation: loading 1.5s infinite alternate;
 
 
 .blog-main-content {
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
     margin-top: 60px;
 }
 
@@ -402,11 +423,6 @@ animation: loading 1.5s infinite alternate;
     height: 20px;
     fill: var(--accent-green);
     margin-left: 10px;
-}
-
-.blog-main-content {
-    display: flex;
-    flex-direction: column;
 }
 
 .posts-container {

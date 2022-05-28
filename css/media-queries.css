@@ -25,11 +25,19 @@
     .filter-button-container {
         width: 70vw;
     }
+
+    .posts-container {
+        width: 70vw;
+    }
 }
 
 /* Media Query for laptop */
 
 @media screen and (min-width: 1024px) {
+
+    .error-message {
+        width: 60vw;
+    }
     
     /* --- NAVIGATION BAR --- */
     .navbar {
@@ -175,12 +183,12 @@
     }
 
     .new-reviews-content {
-        margin-top: 5px;
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .new-reviews-content .post-card {
+        margin-left: 10px;
     }
 
     .slide-indicator-container {
