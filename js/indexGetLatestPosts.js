@@ -28,7 +28,7 @@ async function renderContentLatestPosts() {
     document.querySelector(".prev").style.display = "none";
     document.querySelector(".next").style.display = "none";
     document.querySelector(".slide-indicator-container").style.display = "none";
-    slide1Container.innerHTML = errorMessage("There was an error loading. Please refresh or try again later");
+    slide1Container.innerHTML = errorMessage();
   }
 }
 

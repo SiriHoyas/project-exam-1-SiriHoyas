@@ -16,7 +16,7 @@ async function renderContentLatestReviews() {
       createHTMLForPosts(newestReviewsContainer, result[i]);
     }
   } catch (error) {
-    newestReviewsContainer.innerHTML = errorMessage("There was an error loading. Please refresh or try again later.");
+    newestReviewsContainer.innerHTML = errorMessage();
   }
 }
 

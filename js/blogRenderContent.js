@@ -16,7 +16,7 @@ export async function renderContentBlog() {
     document.querySelector(".filter-button-container").style.display = "none";
     document.querySelector(".show-more-btn").style.display = "none";
     postsContainer.style.display = "flex";
-    postsContainer.innerHTML = errorMessage("There was an error loading. Please refresh or try again later.");
+    postsContainer.innerHTML = errorMessage();
   }
 }
 

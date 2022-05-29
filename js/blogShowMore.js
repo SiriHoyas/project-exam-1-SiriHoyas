@@ -18,7 +18,7 @@ async function showMore() {
     postsContainer.style.display = "flex";
     document.querySelector(".filter-button-container").style.display = "none";
     showMoreBtn.style.display = "none";
-    postsContainer.innerHTML = errorMessage("There was an error loading. Please refresh or try again later.");
+    postsContainer.innerHTML = errorMessage();
   }
 }
 

@@ -15,7 +15,7 @@ async function renderFilteredContent(categoryNumber) {
     }
   } catch (error) {
     postsContainer.style.display = "flex";
-    postsContainer.innerHTML = errorMessage("There was an error loading. Please refresh or try again later.");
+    postsContainer.innerHTML = errorMessage();
   }
 }
 

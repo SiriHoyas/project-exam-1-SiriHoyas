@@ -1,11 +1,12 @@
 const contactForm = document.querySelector(".contact-form");
-const nameInput = document.querySelector("#yourName");
-const email = document.querySelector("#yourEmail");
-const subject = document.querySelector("#yourSubject");
-const messageInput = document.querySelector("#yourMessage");
 
 async function validateAndSubmitForm(event) {
   event.preventDefault();
+
+  const nameInput = document.querySelector("#yourName");
+  const email = document.querySelector("#yourEmail");
+  const subject = document.querySelector("#yourSubject");
+  const messageInput = document.querySelector("#yourMessage");
 
   const nameError = document.querySelector("#name-error");
   const emailError = document.querySelector("#email-error");
@@ -60,7 +61,7 @@ async function validateAndSubmitForm(event) {
         yourMessage: messageInput.value.trim(),
       }),
       headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     });
     const json = await response.json();

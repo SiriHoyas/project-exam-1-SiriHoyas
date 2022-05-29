@@ -1,20 +1,24 @@
 import { getContent } from "./components/getContent.js";
 import { expandImg } from "./imgModal.js";
+import { errorMessage } from "./components/errorMessage.js";
 
 async function renderSinglePost() {
   const querystring = document.location.search;
   const params = new URLSearchParams(querystring);
   const id = params.get("id");
   const urlForSinglePost = "https://evolution.heysiri.codes/wp-json/wp/v2/posts/" + id;
+  const postSpecificContainer = document.querySelector(".post-spesific-container");
 
   try {
     const result = await getContent(urlForSinglePost);
-    const postSpecificContainer = document.querySelector(".post-spesific-container");
     const title = document.querySelector("title");
     title.innerHTML = `Evolution | ${result.title.rendered}`;
     createHTMLForSinglePost(postSpecificContainer, result);
     expandImg(result);
-  } catch (error) {}
+  } catch (error) {
+    postSpecificContainer.innerHTML = errorMessage();
+    postSpecificContainer.style.display = "flex";
+  }
 }
 
 renderSinglePost();
@@ -43,19 +47,17 @@ async function handleFormSubmit(event) {
 
   const [postId, name, email, comment] = event.target.elements;
 
-  const data = JSON.stringify({
-    post: postId.value,
-    author_name: name.value,
-    author_email: email.value,
-    content: comment.value,
-  });
-
   const response = await fetch("https://evolution.heysiri.codes/wp-json/wp/v2/comments", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: data,
+    body: JSON.stringify({
+      post: postId.value.trim(),
+      author_name: name.value.trim(),
+      author_email: email.value.trim(),
+      content: comment.value.trim(),
+    }),
   });
   if (response.ok) {
     commentContainer.innerHTML = "";
