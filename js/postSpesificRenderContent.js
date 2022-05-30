@@ -62,7 +62,7 @@ async function handleFormSubmit(event) {
 
   console.log(name.value.length);
 
-  if (checkLength(name.value, 4) === true) {
+  if (checkLength(name.value, 5) === true) {
     nameError.style.display = "none";
     namePassed = true;
   } else {
@@ -76,7 +76,7 @@ async function handleFormSubmit(event) {
     emailError.style.display = "revert";
   }
 
-  if (checkLength(comment.value, 24) === true) {
+  if (checkLength(comment.value, 25) === true) {
     commentError.style.display = "none";
     commentPassed = true;
   } else {

@@ -20,7 +20,7 @@ async function validateAndSubmitForm(event) {
   let subjectPassed = false;
   let messagePassed = false;
 
-  if (checkLength(nameInput.value, 4) === true) {
+  if (checkLength(nameInput.value, 5) === true) {
     nameError.style.display = "none";
     namePassed = true;
   } else {
@@ -34,14 +34,14 @@ async function validateAndSubmitForm(event) {
     emailError.style.display = "revert";
   }
 
-  if (checkLength(subject.value, 14) === true) {
+  if (checkLength(subject.value, 15) === true) {
     subjectError.style.display = "none";
     subjectPassed = true;
   } else {
     subjectError.style.display = "revert";
   }
 
-  if (checkLength(messageInput.value, 24) === true) {
+  if (checkLength(messageInput.value, 25) === true) {
     messageError.style.display = "none";
     messagePassed = true;
   } else {
