@@ -60,8 +60,6 @@ async function handleFormSubmit(event) {
   let emailPassed = false;
   let commentPassed = false;
 
-  console.log(name.value.length);
-
   if (checkLength(name.value, 5) === true) {
     nameError.style.display = "none";
     namePassed = true;

@@ -1,6 +1,5 @@
 export function expandImg(post) {
   const imgClass = document.querySelector(".post-featured-img");
-  console.log(imgClass);
   const modal = document.querySelector(".modal");
 
   imgClass.addEventListener("click", expand);

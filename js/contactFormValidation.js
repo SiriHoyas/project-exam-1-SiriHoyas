@@ -67,7 +67,6 @@ async function validateAndSubmitForm(event) {
       },
     });
     const json = await response.json();
-    console.log(json);
   }
 }
 
