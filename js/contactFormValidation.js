@@ -1,3 +1,5 @@
+import { checkLength, validateEmail } from "./components/formValidation.js";
+
 const contactForm = document.querySelector(".contact-form");
 
 async function validateAndSubmitForm(event) {
@@ -18,7 +20,7 @@ async function validateAndSubmitForm(event) {
   let subjectPassed = false;
   let messagePassed = false;
 
-  if (checkLength(nameInput.value, 5) === true) {
+  if (checkLength(nameInput.value, 4) === true) {
     nameError.style.display = "none";
     namePassed = true;
   } else {
@@ -32,14 +34,14 @@ async function validateAndSubmitForm(event) {
     emailError.style.display = "revert";
   }
 
-  if (checkLength(subject.value, 15) === true) {
+  if (checkLength(subject.value, 14) === true) {
     subjectError.style.display = "none";
     subjectPassed = true;
   } else {
     subjectError.style.display = "revert";
   }
 
-  if (checkLength(messageInput.value, 25) === true) {
+  if (checkLength(messageInput.value, 24) === true) {
     messageError.style.display = "none";
     messagePassed = true;
   } else {
@@ -70,17 +72,3 @@ async function validateAndSubmitForm(event) {
 }
 
 contactForm.addEventListener("submit", validateAndSubmitForm);
-
-function checkLength(value, length) {
-  if (value.trim().length > length) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function validateEmail(email) {
-  const regEx = /^([a-z0-9_\.\+-]+)@([\da-z-]+)(\.[a-z]{2,6})+$/;
-  const patternMatch = regEx.test(email);
-  return patternMatch;
-}

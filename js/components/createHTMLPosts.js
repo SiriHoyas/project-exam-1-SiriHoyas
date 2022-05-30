@@ -1,3 +1,4 @@
+import { getCategory } from "../categoryConverter.js";
 export async function createHTMLForPosts(container, post) {
   const category = await getCategory(post.categories[0]);
 
@@ -10,20 +11,4 @@ export async function createHTMLForPosts(container, post) {
           <p>${post.acf.subheading}<p>
         </div>
     </a>`;
-}
-// Category converter
-async function getCategory(category) {
-  try {
-    const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
-    const result = await fetch(url);
-    const json = await result.json();
-
-    for (let i = 0; i < json.length; i++) {
-      if (category === json[i].id) {
-        return json[i].name.toUpperCase();
-      }
-    }
-  } catch (error) {
-    return "No category found";
-  }
 }

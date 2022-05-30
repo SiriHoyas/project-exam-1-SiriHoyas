@@ -60,10 +60,13 @@
       <input type="hidden" id="postId" value="" />
       <label for="comment-name">Name</label>
       <input type="text" name="comment-name" id="comment-name" />
+      <p class="comment-name-error error">Please enter a name longer than 5 characters</p>
       <label for="comment-name-email">Email</label>
-      <input type="email" name="comment-email" id="comment-name-email" />
+      <input type="email" name="comment-email" id="comment-email" />
+      <p class="comment-email-error error">Please enter a valid email</p>
       <label for="comment">Comment</label>
       <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+      <p class="comment-input-error error">Please write a comment longer than 25 characters</p>
       <input type="submit" class="button" value="Send comment" />
     </form>
 

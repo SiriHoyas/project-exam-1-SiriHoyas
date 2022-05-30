@@ -302,6 +302,7 @@ animation: loading 1.5s infinite alternate;
     width: 90vw;
     padding: 1rem;
     margin-top: 6rem;
+    margin-bottom: 3rem;
 }
 
 .contact-form-container h1 {

@@ -1,6 +1,8 @@
 import { getContent } from "./components/getContent.js";
 import { expandImg } from "./imgModal.js";
 import { errorMessage } from "./components/errorMessage.js";
+import { getCategory } from "./categoryConverter.js";
+import { checkLength, validateEmail } from "./components/formValidation.js";
 
 async function renderSinglePost() {
   const querystring = document.location.search;
@@ -45,43 +47,62 @@ commentContainer.addEventListener("submit", handleFormSubmit);
 async function handleFormSubmit(event) {
   event.preventDefault();
 
-  const [postId, name, email, comment] = event.target.elements;
+  const postId = document.querySelector("#postId");
+  const name = document.querySelector("#comment-name");
+  const email = document.querySelector("#comment-email");
+  const comment = document.querySelector("#comment");
 
-  const response = await fetch("https://evolution.heysiri.codes/wp-json/wp/v2/comments", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      post: postId.value.trim(),
-      author_name: name.value.trim(),
-      author_email: email.value.trim(),
-      content: comment.value.trim(),
-    }),
-  });
-  if (response.ok) {
-    commentContainer.innerHTML = "";
-    commentContainer.innerHTML = `<div class="comment-submitted">Thanks! Your comment has been submitted.</div>`;
+  const nameError = document.querySelector(".comment-name-error");
+  const emailError = document.querySelector(".comment-email-error");
+  const commentError = document.querySelector(".comment-input-error");
+
+  let namePassed = false;
+  let emailPassed = false;
+  let commentPassed = false;
+
+  console.log(name.value.length);
+
+  if (checkLength(name.value, 4) === true) {
+    nameError.style.display = "none";
+    namePassed = true;
   } else {
-    const json = await response.json();
-    commentContainer.innerHTML = `<div class="comment-error">Your comment could not be posted. Please try again</div>`;
+    nameError.style.display = "revert";
   }
-}
 
-// Convert categories from number to name
-async function getCategory(category) {
-  try {
-    const url = "https://evolution.heysiri.codes/wp-json/wp/v2/categories";
-    const result = await fetch(url);
-    const json = await result.json();
+  if (validateEmail(email.value) === true) {
+    emailError.style.display = "none";
+    emailPassed = true;
+  } else {
+    emailError.style.display = "revert";
+  }
 
-    for (let i = 0; i < json.length; i++) {
-      if (category === json[i].id) {
-        return json[i].name.toUpperCase();
-      }
+  if (checkLength(comment.value, 24) === true) {
+    commentError.style.display = "none";
+    commentPassed = true;
+  } else {
+    commentError.style.display = "revert";
+  }
+
+  if (namePassed && emailPassed && commentPassed) {
+    const response = await fetch("https://evolution.heysiri.codes/wp-json/wp/v2/comments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        post: postId.value.trim(),
+        author_name: name.value.trim(),
+        author_email: email.value.trim(),
+        content: comment.value.trim(),
+      }),
+    });
+    if (response.ok) {
+      commentContainer.innerHTML = "";
+      commentContainer.innerHTML = `<div class="comment-submitted">Thanks! Your comment has been submitted.</div>`;
+    } else {
+      const json = await response.json();
+      commentContainer.innerHTML = `<div class="comment-error">Your comment could not be posted. Please try again</div>`;
     }
-  } catch (error) {
-    return "No category found";
   }
 }
 
